@@ -11,6 +11,8 @@ import Timer from './Components/Timer';
 import List from './Components/List';
 import Form from './Components/Form';
 import State from './Components/State';
+import Chuanzhi from './Components/Chuanzhi';
+import Style from './Components/Style';
 class Index extends Component {
     render(){
         return (
@@ -22,6 +24,8 @@ class Index extends Component {
                 <List/>
                 <Form/>
                 <State/>
+                <Chuanzhi/>
+                <Style/>
                 <Footer/>
             </div>
         )
