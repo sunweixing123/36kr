@@ -1,5 +1,8 @@
-import React,{Component} from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from 'react';
+import ReactDOM, { render } from 'react-dom';
+// import { Router, Route } from 'react-router';
+// import {Link} from 'react-router-dom';
+import { Link,BrowserRouter as Router, Route } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -14,22 +17,42 @@ import State from './Components/State';
 import Chuanzhi from './Components/Chuanzhi';
 import Style from './Components/Style';
 class Index extends Component {
-    render(){
+    render() {
         return (
             <div>
-                <Header/>
-                <Test/>
-                <Test2/>
-                <Timer/>
-                <List/>
-                <Form/>
-                <State/>
-                <Chuanzhi/>
-                <Style/>
-                <Footer/>
+                <Router>                   
+                    <div>
+                        <ul>
+                            <li><Link to="/">header</Link></li>
+                            <li><Link to="/test">test</Link></li>
+                            <li><Link to="/test2">test2</Link></li>
+                            <li><Link to="/timer">timer</Link></li>
+                            <li><Link to="/list">list</Link></li>
+                            <li><Link to="/form">form</Link></li>
+                            <li><Link to="/state">state</Link></li>
+                            <li><Link to="/chuanzhi">chuanzhi</Link></li>
+                            <li><Link to="/style">style</Link></li>
+                            <li><Link to="/footer">footer</Link></li>
+                        </ul>
+                        <Route path="/header" component={Header} > header</Route>
+                        <Route path="/test" component={Test} >test</Route>
+                        <Route path="/test2" component={Test2} >test2</Route>
+                        <Route path="/timer" component={Timer} >timer</Route>
+                        <Route path="/list" component={List} >list</Route>
+                        <Route path="/form" component={Form} >form</Route>
+                        <Route path="/state" component={State} >state</Route>
+                        <Route path="/chuanzhi" component={Chuanzhi} >chuanzhi</Route>
+                        <Route path="/style" component={Style} >style</Route>
+                        <Route path="/footer" component={Footer} >footer</Route>
+                    </div>
+                </Router>
             </div>
         )
     }
 }
-ReactDOM.render(<Index/>, document.getElementById('root'));
+ReactDOM.render((
+    <Index/>    
+),
+
+    document.getElementById('root'));
 registerServiceWorker();
