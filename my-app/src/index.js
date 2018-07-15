@@ -16,6 +16,7 @@ import Form from './Components/Form';
 import State from './Components/State';
 import Chuanzhi from './Components/Chuanzhi';
 import Style from './Components/Style';
+import Calculator from './Components/Calculator';
 class Index extends Component {
     render() {
         return (
@@ -23,6 +24,7 @@ class Index extends Component {
                 <Router>                   
                     <div>
                         <ul>
+                            <li><Link to="/calculator">Calculator</Link></li>
                             <li><Link to="/">header</Link></li>
                             <li><Link to="/test">test</Link></li>
                             <li><Link to="/test2">test2</Link></li>
@@ -34,6 +36,7 @@ class Index extends Component {
                             <li><Link to="/style">style</Link></li>
                             <li><Link to="/footer">footer</Link></li>
                         </ul>
+                        <Route path="/calculator" component={Calculator}>calculator</Route>
                         <Route path="/header" component={Header} > header</Route>
                         <Route path="/test" component={Test} >test</Route>
                         <Route path="/test2" component={Test2} >test2</Route>

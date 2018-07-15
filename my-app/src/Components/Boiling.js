@@ -11,4 +11,4 @@ class Boiling extends Component {
         )
     }
 }
-export default Boliing;
+export default Boiling;
