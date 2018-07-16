@@ -4,8 +4,8 @@ class Style extends Component {
     render(){
         return (
             <div>
-                <div class="name"></div>
-                <div class="age"></div>
+                <div className="name"></div>
+                <div className="age"></div>
             </div>
         )
     }

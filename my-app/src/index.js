@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM, { render } from 'react-dom';
 // import { Router, Route } from 'react-router';
 // import {Link} from 'react-router-dom';
-import { Link,BrowserRouter as Router, Route } from 'react-router-dom';
+import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
+// import {HashRouter, Route, Link, Switch} from 'react-router-dom';
 import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
@@ -17,13 +18,17 @@ import State from './Components/State';
 import Chuanzhi from './Components/Chuanzhi';
 import Style from './Components/Style';
 import Calculator from './Components/Calculator';
+import WelcomeDialog from './Components/WelcomeDialog';
+import Splitpane from './Components/Splitpane';
 class Index extends Component {
     render() {
         return (
             <div>
-                <Router>                   
+                <Router>
                     <div>
                         <ul>
+                            <li><Link to="/splitpane">Splitpane</Link></li>
+                            <li><Link to="/welcomedialog">WelcomeDialog</Link></li>
                             <li><Link to="/calculator">Calculator</Link></li>
                             <li><Link to="/">header</Link></li>
                             <li><Link to="/test">test</Link></li>
@@ -36,17 +41,20 @@ class Index extends Component {
                             <li><Link to="/style">style</Link></li>
                             <li><Link to="/footer">footer</Link></li>
                         </ul>
-                        <Route path="/calculator" component={Calculator}>calculator</Route>
-                        <Route path="/header" component={Header} > header</Route>
-                        <Route path="/test" component={Test} >test</Route>
-                        <Route path="/test2" component={Test2} >test2</Route>
-                        <Route path="/timer" component={Timer} >timer</Route>
-                        <Route path="/list" component={List} >list</Route>
-                        <Route path="/form" component={Form} >form</Route>
-                        <Route path="/state" component={State} >state</Route>
-                        <Route path="/chuanzhi" component={Chuanzhi} >chuanzhi</Route>
-                        <Route path="/style" component={Style} >style</Route>
-                        <Route path="/footer" component={Footer} >footer</Route>
+
+                        <Route path="/splitpane" component={Splitpane}></Route>
+                        <Route path="/welcomedialog" component={WelcomeDialog}></Route>
+                        <Route path="/calculator" component={Calculator}></Route>
+                        <Route path="/header" component={Header} ></Route>
+                        <Route path="/test" component={Test} ></Route>
+                        <Route path="/test2" component={Test2} ></Route>
+                        <Route path="/timer" component={Timer} ></Route>
+                        <Route path="/list" component={List} ></Route>
+                        <Route path="/form" component={Form} ></Route>
+                        <Route path="/state" component={State} ></Route>
+                        <Route path="/chuanzhi" component={Chuanzhi} ></Route>
+                        <Route path="/style" component={Style} ></Route>
+                        <Route path="/footer" component={Footer} ></Route>
                     </div>
                 </Router>
             </div>
@@ -54,7 +62,7 @@ class Index extends Component {
     }
 }
 ReactDOM.render((
-    <Index/>    
+    <Index />
 ),
 
     document.getElementById('root'));
