@@ -6,6 +6,7 @@ import { Link, BrowserRouter as Router, Route } from 'react-router-dom';
 // import {HashRouter, Route, Link, Switch} from 'react-router-dom';
 import './index.css';
 import App from './App';
+import Children from './Components/Children';
 import registerServiceWorker from './registerServiceWorker';
 import Test from './Components/Test';
 import Footer from './Components/Footer';
@@ -20,6 +21,9 @@ import Style from './Components/Style';
 import Calculator from './Components/Calculator';
 import WelcomeDialog from './Components/WelcomeDialog';
 import Splitpane from './Components/Splitpane';
+import SignUpDialog from './Components/SignUpDialog';
+import NumberList1 from './Components/NumberList';
+import Blog1 from './Components/Blog';
 class Index extends Component {
     render() {
         return (
@@ -27,6 +31,10 @@ class Index extends Component {
                 <Router>
                     <div>
                         <ul>
+                            <li><Link to="/Blog1">Blog</Link></li>
+                            <li><Link to="/NumberList1">NumberList</Link></li>
+                            <li><Link to="/SignUpDialog">SignUpDialog</Link></li>
+                            <li><Link to="/children">children</Link></li>
                             <li><Link to="/splitpane">Splitpane</Link></li>
                             <li><Link to="/welcomedialog">WelcomeDialog</Link></li>
                             <li><Link to="/calculator">Calculator</Link></li>
@@ -41,7 +49,10 @@ class Index extends Component {
                             <li><Link to="/style">style</Link></li>
                             <li><Link to="/footer">footer</Link></li>
                         </ul>
-
+                        <Route path="/Blog1" component={Blog1}></Route>
+                        <Route path="/numberlist1" component={NumberList1}></Route>
+                        <Route path="/signupdialog" component={SignUpDialog}></Route>
+                        <Route path="/children" component={Children}></Route>
                         <Route path="/splitpane" component={Splitpane}></Route>
                         <Route path="/welcomedialog" component={WelcomeDialog}></Route>
                         <Route path="/calculator" component={Calculator}></Route>
