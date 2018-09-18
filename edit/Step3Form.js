@@ -125,6 +125,7 @@ class RoleDetail extends Component {
             initialValue: model.sale_type || goodsSaleTypeArr[0].value,
             rules: [{ required: true }],
           })(<RadioGroup>
+            
             {goodsSaleTypeArr.map((cell, index) =>
               <RadioButton key={index} value={cell.value}>{cell.label}</RadioButton>)}
              </RadioGroup>)}

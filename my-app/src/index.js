@@ -24,6 +24,8 @@ import Splitpane from './Components/Splitpane';
 import SignUpDialog from './Components/SignUpDialog';
 import NumberList1 from './Components/NumberList';
 import Blog1 from './Components/Blog';
+import AntdForm from './antd/Form';
+import City from './antd/City';
 class Index extends Component {
     render() {
         return (
@@ -48,6 +50,8 @@ class Index extends Component {
                             <li><Link to="/chuanzhi">chuanzhi</Link></li>
                             <li><Link to="/style">style</Link></li>
                             <li><Link to="/footer">footer</Link></li>
+                            <li><Link to="/antdForm">antdForm</Link></li>
+                            <li><Link to="/antdCity">antdCity</Link></li>
                         </ul>
                         <Route path="/Blog1" component={Blog1}></Route>
                         <Route path="/numberlist1" component={NumberList1}></Route>
@@ -66,6 +70,8 @@ class Index extends Component {
                         <Route path="/chuanzhi" component={Chuanzhi} ></Route>
                         <Route path="/style" component={Style} ></Route>
                         <Route path="/footer" component={Footer} ></Route>
+                        <Route path="/antdForm" component={AntdForm} ></Route>
+                        <Route path="/antdCity" component={City} ></Route>
                     </div>
                 </Router>
             </div>
